@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulohomeproduto" id="titulo">
+      <ion-icon class="boxicone01" name="cube"></ion-icon> Estoque de Produtos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list *ngFor="let produto of this.componentesDoProduto,let i =index">
+  <ion-item (click)="editar(produto)">
+      <ion-avatar><img src="{{produto.downloadURL}}" /></ion-avatar>
+     <ion-label>{{produto.nome}}</ion-label>
+  </ion-item>
+  </ion-list>
+
+
+  <ion-fab horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="irParaCadastrar()" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
